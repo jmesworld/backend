@@ -1,0 +1,30 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "React Backend",
+  "main": "index.js",
+  "scripts": {
+    "start": "node scripts/start.js",
+    "dev": "nodemon --exec 'npm run start'",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jmesworld/backend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jmesworld/backend/issues"
+  },
+  "homepage": "https://github.com/jmesworld/backend#readme",
+  "dependencies": {
+    "bignumber.js": "^9.0.2",
+    "bip39": "^3.0.4",
+    "body-parser": "^1.20.0",
+    "ethers": "^5.6.8",
+    "express": "^4.18.1",
+    "nodeforage": "^1.1.2",
+    "web3": "^1.7.3"
+  }
+}
