@@ -27,6 +27,7 @@ function faucetHandler ({ faucetManager,identityManager } = {}) {
                 console.log({sendTransactionRequest})
                 return res.json({  txid, error: false });
             } catch (e) {
+                console.error(e);
                 return next(e);
             }
         } catch (e) { console.error({ea2: e}); return next(e) }
