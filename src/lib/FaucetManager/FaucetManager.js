@@ -18,8 +18,11 @@ class FaucetManager {
         this.privateKey = (props.privateKey) ? props.privateKey : null;
     }
     async init(props = {}){
+        const host = 'http://3.72.109.56:8545';
+        console.log(`Connecting to faucet: ${host}`);
         const web3 = new Web3(
-            new Web3.providers.HttpProvider('http://localhost:8545')
+            // new Web3.providers.HttpProvider('http://jmes_node:8545')
+            new Web3.providers.HttpProvider(host)
         );
 
         const password = (props.password)? props.password : "";
@@ -76,6 +79,7 @@ class FaucetManager {
             });
             console.log(tx);
             const res = await this.web3.eth.sendSignedTransaction(tx.rawTransaction);
+            console.log(res);
             return res;
         } catch (e){
             console.error(e);

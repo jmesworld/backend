@@ -27,6 +27,7 @@ async function init () {
         });
         // console.log(this.faucetManager)
 
+        console.log('Faucet ready');
         // const sendTransactionRequest = await this.faucetManager.sendTransaction({
         //     address: "0x060Cf7c0972217F37dB63Ab44B9EdE9A41e0DEB4",
         //     amount: 8888
