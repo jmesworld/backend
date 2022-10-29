@@ -18,7 +18,6 @@ async function createItem(createParams){
     if(!genre) throw new Error('Required genre');
     if(!about) throw new Error('Required about');
 
-
     const item = {
         fileName: `${image.md5}.png`,
         author,

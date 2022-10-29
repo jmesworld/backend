@@ -6,7 +6,7 @@ async function updateItemVote(updateItemVoteParams){
     } = updateItemVoteParams;
     if(!itemIdentifier) throw new Error('Required itemIdentifier');
     if(!userIdentifier) throw new Error('Required userIdentifier');
-    if(!direction) throw new Error('Required direction');
+    if(direction == null) throw new Error('Required direction');
 
     return this.itemInteractionsStore.setItem(`${itemIdentifier}-${userIdentifier}`, {direction});
 };
