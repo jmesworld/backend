@@ -9,4 +9,5 @@ class IdentityManager {
 };
 IdentityManager.prototype.createIdentity = require('./methods/createIdentity');
 IdentityManager.prototype.resolveIdentity = require('./methods/resolveIdentity');
+IdentityManager.prototype.getToken = require('./methods/getToken');
 module.exports = IdentityManager;
