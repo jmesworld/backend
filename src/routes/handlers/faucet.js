@@ -9,7 +9,7 @@ function faucetHandler ({ faucetManager,identityManager } = {}) {
             },
         } = req
         try {
-            if (!username) throw new MissingQueryParameterError(path, 'username')
+            if (!username) throw new MissingQueryParameterError(req.path, 'username')
 
             try {
                 const resolvedIdentity = await identityManager.resolveIdentity({

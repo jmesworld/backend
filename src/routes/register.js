@@ -26,7 +26,7 @@ const register = function ({ server, managers }) {
 
     router.get('/faucet/receive/:username', faucetHandler.getTokenForUsername);
 
-    router.get('/identity/:username', identitiesHandler.get);
+    router.get('/identity/:identifier', identitiesHandler.get);
     router.post('/identity/token', identitiesHandler.getToken);
     router.post('/identity/:username', identitiesHandler.post);
 

@@ -72,21 +72,25 @@ function identitiesHandler ({ identityManager } = {}) {
         const {
             path,
             params: {
-                username,
-                address
+                identifier
             }
         } = req
         try {
-            if(!username && !address) throw new MissingBodyParameterError(path, 'username or address')
+            if(!identifier) throw new MissingBodyParameterError(path, 'username or address')
 
             try {
-                const identity = await identityManager.resolveIdentity({
-                    username, address
-                })
+                const identityFromAddress = await identityManager.resolveIdentity({
+                    address: identifier
+                });
+                const identityFromUsername = await identityManager.resolveIdentity({
+                    username: identifier
+                });
 
+
+                const identity = (identityFromAddress && identityFromAddress.address) ? identityFromAddress : identityFromUsername;
 
                 if(!identity.address){
-                    throw new Error(`Identity ${username} is not registered.`);
+                    throw new Error(`Identity ${identifier} is not registered.`);
                 }
                 return res.json({ identity: identity, error: false })
             } catch (e) {
